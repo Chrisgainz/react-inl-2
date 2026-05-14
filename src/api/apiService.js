@@ -1,78 +1,78 @@
 import api from "./axiosConfig";
 
 
-// Fler endpoints och dokumentation: https://www.themealdb.com/api.php
+// More endpoints and documentation: https://www.themealdb.com/api.php
 
 
-// Hämta måltid med ID.
+// Get meal by ID.
 
 export const getMealById = async (id) => {
-  try {
+    try {
 
-    const response = await api.get( `/lookup.php?i=${id}` );
+        const response = await api.get(`/lookup.php?i=${id}`);
 
-    return response.data.meals[0];
+        return response.data.meals?.[0] || null;
 
-  } catch (error) {
+    } catch (error) {
 
-    console.error("Fel vid hämtning av måltid med ID:", error);
+        console.error("Error fetching meal by ID:", error);
 
-    throw error;
-  }
+        throw error;
+    }
 };
 
 
-// Hämta slumpad måltid.
+// Get random meal.
 
 export const getRandomMeal = async () => {
-  try {
+    try {
 
-    const response = await api.get( "/random.php" );
+        const response = await api.get("/random.php");
 
-    return response.data.meals[0];
+        return response.data.meals?.[0] || null;
 
-  } catch (error) {
+    } catch (error) {
 
-    console.error("Fel vid slumpad måltid:", error);
+        console.error("Error fetching random meal:", error);
 
-    throw error;
-  }
+        throw error;
+    }
 };
 
 
-// Söka efter måltid med dess namn.
+// Search for a meal by name.
 
 export const searchMealByName = async (mealName) => {
 
-  try {
+    try {
 
-    const response = await api.get( `/search.php?s=${mealName}` );
+        const response = await api.get(`/search.php?s=${mealName}`);
 
-    return response.data.meals || [];
+        return response.data.meals || [];
 
-  } catch (error) {
+    } catch (error) {
 
-    console.error("Fel vid sökning av måltid:", error);
+        console.error("Error searching for meal:", error);
 
-    throw error;
-  }
+        throw error;
+    }
 };
 
 
-// Hämta kategorier.
+// Get categories.
 
 export const getCategories = async () => {
 
-  try {
+    try {
 
-    const response = await api.get( "/categories.php" );
+        const response = await api.get("/categories.php");
 
-    return response.data.categories || [];
+        return response.data.categories || [];
 
-  } catch (error) {
+    } catch (error) {
 
-    console.error("Fel vid hämtning av kategorier:", error);
+        console.error("Error fetching categories:", error);
 
-    throw error;
-  }
+        throw error;
+    }
 };
