@@ -1,9 +1,11 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import HomePage from "./pages/HomePage";
 import RecipesPage from "./pages/RecipesPage";
 import RecipeDetailPage from "./pages/RecipeDetailPage";
 import FavoritesPage from "./pages/FavoritesPage";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 
@@ -11,11 +13,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/">Hem</Link>
-        <Link to="/recipes">Recept</Link>
-        <Link to="/favorites">Favoriter</Link>
-      </nav>
+      
+      <Header />
+         
+   <main>
 
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -24,6 +25,11 @@ function App() {
         favorites={favorites} setFavorites={setFavorites} />} />
         <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
+
+    </main>
+
+      <Footer />
+
     </BrowserRouter>
   )
 }
