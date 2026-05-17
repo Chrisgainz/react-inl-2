@@ -1,33 +1,87 @@
+ /* 
+  RESPONSIVE BREAKPOINTS:
+  Mobile:   Default (Up to 767px)
+  Tablet:   @media (min-width: 768px)
+  Desktop:  @media (min-width: 1024px)
+  */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+
+ html,
+ body,
+ #root {
+   min-height: 100vh;
+   margin: 0;
+ }
+
+ #root {
+
+   display: flex;
+   flex-direction: column;
+
+   /* Color scheme */
+
+   --bg-color: #FFFFFF;
+   --bg-color-card: #F4F7F5;
+   --bg-header-footer: #356b53;
+   --link-button-color: #3DAA6E;
+   --link-button-hover-color: #1d7e4a;
+   --link-button-active-color: #2C7D52;
+   --text-color: #1E2A22;
+   --border-color: #1cb152;
+
+   /* Border radius */
+
+   --radius-xs: 4px;  /* small inputs etc. */
+   --radius-sm: 8px;  /* buttons */
+   --radius-md: 12px;  /* cards */
+   --radius-lg: 18px;  /* bigger containers */
+
+ }
+
+ body {
+
+   line-height: 1.5;
+   -webkit-font-smoothing: antialiased;
+   font-size: 1rem;
+ }
+
+ main {
+
+   flex: 1;
+ }
+
+ img {
+  
+   max-width: 100%;
+   height: auto;
+   display: block;
+ }
+
+ input,
+ button,
+ textarea,
+ select {
+   font: inherit;
+ }
+
+h1,h2,h3,h4,h5,h6 {
+
+  color: var(--text-color);
 }
 
-html,
-body,
-#root {
-  height: 100%;
-}
+ p {
 
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  font-size: 1rem;
-}
+   color: var(--text-color);
+ }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+ a {
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
+   text-decoration: none;
+ }
