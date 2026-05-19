@@ -1,7 +1,12 @@
-export default function FavoritesPage() {
+import MealCardContainer from "../components/MealCardContainer/MealCardContainer"
+
+export default function FavoritesPage({ favorites, setFavorites }) {
   return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
+    <section>
+      <h1>Sparade favoriter</h1>
+
+      <MealCardContainer meals={favorites} />
+
+    </section>
   )
 }
