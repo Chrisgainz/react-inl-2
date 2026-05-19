@@ -4,7 +4,7 @@ import styles from './MealCardContainer.module.css'
 const MealCardContainer = ({ meals }) => {
     return (
         !meals || meals.length === 0 ? (
-            <p className={styles.notFoundMessage}>No meals found</p>)
+            <p className={styles.notFoundMessage}>Inga recept hittades</p>)
             : (
 
                 <section className={styles.container}>
