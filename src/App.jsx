@@ -23,7 +23,8 @@ function App() {
         <Route path="/recipes" element={<RecipesPage />} />
         <Route path="/recipes/:id" element={<RecipeDetailPage
         favorites={favorites} setFavorites={setFavorites} />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/favorites" element={<FavoritesPage
+        favorites={favorites} setFavorites={setFavorites} />} />
       </Routes>
 
     </main>
