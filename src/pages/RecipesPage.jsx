@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { searchMealByName } from "../api/apiService"
+import MealCardContainer from "../components/MealCardContainer/MealCardContainer"
 
 export default function RecipesPage() {
   // State for storing meals, loading status, errors and search query
@@ -23,9 +24,15 @@ export default function RecipesPage() {
     })
   }, [])
 
+  // Show loading message while fetching data
+  if (loading) return <p>Laddar...</p>
+
+  // Show error message if something went wrong
+  if (error) return <p>Något gick fel!</p>
+
   return (
-    <div>
-      <h1>Hello world</h1>
+   <div>
+      <MealCardContainer meals={meals} />
     </div>
   )
 }
