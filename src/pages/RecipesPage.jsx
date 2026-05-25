@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { searchMealByName } from "../api/apiService"
 import MealCardContainer from "../components/MealCardContainer/MealCardContainer"
+import SearchBar from "../components/SearchBar/SearchBar"
 
 export default function RecipesPage() {
   // State for storing meals, loading status, errors and search query
@@ -8,10 +9,11 @@ export default function RecipesPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [searchQuery, setSearchQuery] = useState("")
+  const [submittedQuery, setSubmittedQuery] = useState("")
 
   // Fetch meals when the page loads
   useEffect(() => {
-  searchMealByName("chicken")
+  searchMealByName(submittedQuery)
     .then((data) => {
       // Store the fetched meals and stop loading
       setMeals(data)
@@ -22,7 +24,7 @@ export default function RecipesPage() {
       setError(error)
       setLoading(false)
     })
-  }, [])
+  }, [submittedQuery])
 
   // Show loading message while fetching data
   if (loading) return <p>Laddar...</p>
@@ -32,6 +34,10 @@ export default function RecipesPage() {
 
   return (
    <div>
+      <SearchBar 
+      searchQuery={searchQuery} 
+      onSearch={setSearchQuery}
+      onSubmit={() => setSubmittedQuery(searchQuery)} />
       <MealCardContainer meals={meals} />
     </div>
   )
