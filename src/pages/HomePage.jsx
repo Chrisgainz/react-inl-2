@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { getRandomMeal } from "../api/apiService";
+import { getRandomMeal, getMealsByCategory } from "../api/apiService";
 import MealCard from "../components/MealCard/MealCard";
 
 
 export default function HomePage() {
   const [meal, setMeal] = useState(null);
+  const [beefMeals, setBeefMeals] = useState([]);
   const handleRandomMeal = async () => {
   const randomMeal = await getRandomMeal();
 
@@ -13,9 +14,19 @@ export default function HomePage() {
   setMeal(randomMeal);
 };
 
+const fetchBeefMeals = async () => {
+  const meals = await getMealsByCategory("Beef");
+  
+  console.log(meals);
+
+  setBeefMeals(meals);
+
+};
+
 // Fetch a random meal when the page loads:
   useEffect(() => {
       handleRandomMeal();
+      fetchBeefMeals();
     }, []);
 
 
@@ -28,6 +39,16 @@ export default function HomePage() {
       Slumpad måltid
      </button>
      {meal && <MealCard meal={meal} />}
+
+
+     <div>
+       <h2>Populära kötträtter</h2>
+
+      {beefMeals.slice(0, 3).map((meal) => (
+        <MealCard key={meal.idMeal} meal={meal} />
+      ))}
+
+     </div>
    
     </div>
   
