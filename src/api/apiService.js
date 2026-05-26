@@ -76,3 +76,21 @@ export const getCategories = async () => {
         throw error;
     }
 };
+
+// Get meals by category
+
+export const getMealsByCategory = async (category) => {
+
+    try {
+
+        const response = await api.get(`/filter.php?c=${category}`);
+
+        return response.data.meals || [];
+
+    } catch (error) {
+
+        console.error("Error fetching meals by category:", error);
+
+        throw error;
+    }
+};
