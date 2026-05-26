@@ -13,6 +13,8 @@ const Nav = () => {
 
       <Link to="/favorites">Favoriter</Link>
 
+       <Link to="/create">Skapa Måltid</Link>
+
     </nav>
   );
 };
