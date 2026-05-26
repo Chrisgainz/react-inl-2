@@ -7,6 +7,7 @@ export default function HomePage() {
   const [meal, setMeal] = useState(null);
   const [beefMeals, setBeefMeals] = useState([]);
   const [vegetarianMeals, setVegetarianMeals] = useState ([]);
+  const [dessertMeals, setDessertMeals] = useState ([]);
   const handleRandomMeal = async () => {
   const randomMeal = await getRandomMeal();
 
@@ -27,11 +28,20 @@ const fetchVegetarianMeals = async () => {
   setVegetarianMeals(meals);
 };
 
+const fetchDessertMeals = async () => {
+  const meals = await getMealsByCategory("Dessert");
+  console.log(meals);
+  setDessertMeals(meals);
+};
+
+
+
 // Fetch random (suggested meal), beef, vegetarian meals when the page loads:
   useEffect(() => {
       handleRandomMeal();
       fetchBeefMeals();
       fetchVegetarianMeals();
+      fetchDessertMeals();
     }, []);
 
 
@@ -62,6 +72,12 @@ const fetchVegetarianMeals = async () => {
         ))}
     </div>
 
+    <div>
+      <h2>Ljuvliga desserter</h2>
+        {dessertMeals.slice(0, 3).map((meal) => (
+          <MealCard key={meal.idMeal} meal={meal} />  
+        ))}
+    </div>
 
 
 
