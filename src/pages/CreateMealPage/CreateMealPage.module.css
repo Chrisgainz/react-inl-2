@@ -1,0 +1,61 @@
+
+.createMealPage {
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+
+}
+
+.createdMealsWrapper {
+
+    padding: 2rem 2rem;
+
+}
+
+
+.title {
+
+    text-align: center;
+    margin: 2rem 0;
+
+}
+
+.createdMealsSection {
+
+    margin-top: 3rem;
+
+}
+
+.createdMealsTitle {
+
+    margin: 1.5rem;
+    text-align: center;
+}
+
+.clearBtnContainer {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+
+}
+
+
+@media (min-width: 768px) {
+
+    .createMealPage {
+
+        padding: 3rem 2rem;
+    }
+}
+
+
+@media (min-width: 1024px) {
+
+    .createMealPage {
+
+        padding: 4rem 2rem;
+    }
+}

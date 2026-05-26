@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import RecipesPage from "./pages/RecipesPage";
 import RecipeDetailPage from "./pages/RecipeDetailPage";
 import FavoritesPage from "./pages/FavoritesPage";
+import CreateMealPage from "./pages/CreateMealPage/CreateMealPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
@@ -25,6 +26,7 @@ function App() {
         favorites={favorites} setFavorites={setFavorites} />} />
         <Route path="/favorites" element={<FavoritesPage
         favorites={favorites} setFavorites={setFavorites} />} />
+        <Route path="/create" element={<CreateMealPage />} />
       </Routes>
 
     </main>

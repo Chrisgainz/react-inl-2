@@ -1,0 +1,31 @@
+
+.button {
+
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    padding: 0.8rem 1.4rem;
+    border-radius: var(--radius-md);
+    background-color: var(--link-button-color);
+    color: var(--bg-color);
+    font-size: 1rem;
+    font-weight: bolder;
+    transition: background-color 0.2s ease,  transform 0.15s ease;
+
+}
+
+.button:hover {
+
+    background-color: var(--link-button-hover-color);
+}
+
+.button:active {
+
+    transform: scale(0.98);
+    background-color : var(--link-button-active-color);
+}
+
+.button:disabled {
+
+    opacity: 0.6;
+    cursor: not-allowed;
+}
