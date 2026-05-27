@@ -1,23 +1,24 @@
 .homePage{
-width: 100%;
-max-width: 1200px;
-margin: 0 auto;
-padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 .title {
-text-align: center;
-margin-bottom: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    line-height: 1.1;
 }
 
 .subtitle {
-text-align: center;
-margin-bottom: 3rem;
-font-size: 1.1rem;
-}
-
-.randomSection {
-    margin-bottom: 4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .categorySection {
@@ -31,10 +32,46 @@ font-size: 1.1rem;
     margin-top: 2rem;
 }
 
+.randomSection {
+    background-color: var(--bg-color-card);
+    padding: 3rem 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.randomSection {
+    margin-bottom: 5rem;
+    text-align: center;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .randomSection button {
     margin-bottom: 1rem;
 }
 
 .randomSection p {
     margin-bottom: 1.5rem;
+}
+
+.randomMealCard {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.randomSection .mealGrid {
+    justify-items: center;
+}
+
+.heroContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
 }

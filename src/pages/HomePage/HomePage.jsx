@@ -52,18 +52,23 @@ const fetchDessertMeals = async () => {
     <div className={styles.homePage}>
       <h1 className={styles.title}>Vad ska vi äta idag?</h1>
       <p className={styles.subtitle}>
-        Upptäck din nästa favorit!
+      Upptäck recept från hela världen – från klassiska vardagsfavoriter till nya smakupplevelser.
       </p>
 
 
     <section className={styles.randomSection}>
-      <h2>Behöver du inspiration?</h2>
-      <p>
-        Testa någon av våra favoriter just nu!
-      </p>
+
+    <div className={styles.heroContent}>
+    <div className={styles.heroText}>
+      <h2>Vet du inte vad du ska laga idag?</h2>
+      <p>Slumpa fram ett recept och hitta nya favoriter från hela världen.</p>
 
     <Button text="Slumpa måltid" onClick={handleRandomMeal}/>
+    </div>
+    <div className={styles.mealGrid}>
      {meal && <MealCard meal={meal} />}
+     </div>
+     </div>
     </section>
 
 
