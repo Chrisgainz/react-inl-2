@@ -38,11 +38,6 @@
     border-radius: var(--radius-lg);
     margin-bottom: 5rem;
     text-align: center;
-}
-
-.randomSection {
-    margin-bottom: 5rem;
-    text-align: center;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -54,12 +49,6 @@
 
 .randomSection p {
     margin-bottom: 1.5rem;
-}
-
-.randomMealCard {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
 }
 
 .randomSection .mealGrid {
