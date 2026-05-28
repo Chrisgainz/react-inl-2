@@ -60,13 +60,25 @@ export default function RecipeDetailPage({ favorites, setFavorites }) {
     return ingredientList;
   }
 
-  const isFavorite = favorites.some((favorite) => favorite.idMeal === meal?.idMeal);
+ const isFavorite = favorites.some(
+  (favorite) => favorite.idMeal === meal?.idMeal
+);
 
-  function handleAddFavorite() {
-    if (!meal || isFavorite) return;
+function handleAddFavorite() {
+  if (!meal) return;
 
-    setFavorites((prevFavorites) => [...prevFavorites, meal]);
-  }
+  setFavorites((prevFavorites) => {
+    const alreadyExists = prevFavorites.some(
+      (favorite) => favorite.idMeal === meal.idMeal
+    );
+
+    if (alreadyExists) {
+      return prevFavorites;
+    }
+
+    return [...prevFavorites, meal];
+  });
+}
 
   if (loading) {
     return <p className={styles.message}>Laddar recept...</p>;
@@ -106,8 +118,9 @@ export default function RecipeDetailPage({ favorites, setFavorites }) {
           <h1>{meal.strMeal}</h1>
 
           <Button
-            text={isFavorite ? "Sparad som favorit" : "Spara som favorit"}
+            text={isFavorite ? "Redan sparad som favorit" : "Spara som favorit"}
             onClick={handleAddFavorite}
+            disabled={isFavorite}
           />
 
           <section className={styles.section}>
