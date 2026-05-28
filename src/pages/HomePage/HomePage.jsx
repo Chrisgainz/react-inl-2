@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import { getRandomMeal, getMealsByCategory } from "../api/apiService";
-import MealCard from "../components/MealCard/MealCard";
+import { getRandomMeal, getMealsByCategory } from "../../api/apiService";
+import MealCard from "../../components/MealCard/MealCard";
+import styles from "./HomePage.module.css";
+import Button from "../../components/Button/Button";
 
 
 export default function HomePage() {
@@ -47,39 +49,60 @@ const fetchDessertMeals = async () => {
 
   return (
 
-    <div>
-      <h1>Vad ska vi äta idag?</h1>
-     <button onClick={handleRandomMeal}>
-      Slumpad måltid
-     </button>
+    <div className={styles.homePage}>
+      <h1 className={styles.title}>Vad ska vi äta idag?</h1>
+      <p className={styles.subtitle}>
+      Upptäck recept från hela världen – från klassiska vardagsfavoriter till nya smakupplevelser.
+      </p>
+
+
+    <section className={styles.randomSection}>
+
+    <div className={styles.heroContent}>
+    <div className={styles.heroText}>
+      <h2>Vet du inte vad du ska laga idag?</h2>
+      <p>Slumpa fram ett recept och hitta nya favoriter från hela världen.</p>
+
+    <Button text="Slumpa måltid" onClick={handleRandomMeal}/>
+    </div>
+    <div className={styles.mealGrid}>
      {meal && <MealCard meal={meal} />}
+     </div>
+     </div>
+    </section>
 
 
-     <div>
+    <section className={styles.categorySection}>
        <h2>Populära kötträtter</h2>
-
+       <p>Upptäck våra mest omtyckta kötträtter just nu.</p>
+        <div className={styles.mealGrid}>
       {beefMeals.slice(0, 3).map((meal) => (
         <MealCard key={meal.idMeal} meal={meal} />
       ))}
-
-     </div>
+      </div>
+     </section>
    
 
-    <div>
+    <section className={styles.categorySection}>
       <h2>Vegetariska favoriter</h2>
+      <p>Fräscha och smakrika vegetariska rätter.</p>
+      <div className={styles.mealGrid}>
         {vegetarianMeals.slice(0, 3).map((meal) => (
           <MealCard key={meal.idMeal} meal={meal} />
         ))}
-    </div>
+        </div>
+    </section>
 
-    <div>
+
+    <section className={styles.categorySection}>
       <h2>Ljuvliga desserter</h2>
+      <p>En len chokladkaka eller en lätt citrondessert, här finns något för alla smaker.</p>
+      <div className={styles.mealGrid}>
         {dessertMeals.slice(0, 3).map((meal) => (
           <MealCard key={meal.idMeal} meal={meal} />  
         ))}
-    </div>
-
-
+        </div>
+    </section>
 
 
     </div>
