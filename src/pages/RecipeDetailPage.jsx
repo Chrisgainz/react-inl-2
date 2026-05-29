@@ -4,6 +4,26 @@ import { getMealById } from "../api/apiService";
 import Button from "../components/Button/Button";
 import styles from "./RecipeDetailPage.module.css";
 
+  // TheMealDB stores ingredients and measurements in numbered fields.
+  function getIngredients(meal) {
+    const ingredientList = [];
+
+    for (let i = 1; i <= 20; i++) {
+      const ingredient = meal[`strIngredient${i}`];
+      const measure = meal[`strMeasure${i}`];
+
+      if (ingredient && ingredient.trim() !== "") {
+        ingredientList.push({
+          id: `${meal.idMeal}-${i}`,
+          name: ingredient,
+          measure: measure || "",
+        });
+      }
+    }
+
+    return ingredientList;
+  }
+
 export default function RecipeDetailPage({ favorites, setFavorites }) {
   const { id } = useParams();
 
@@ -39,26 +59,6 @@ export default function RecipeDetailPage({ favorites, setFavorites }) {
 
     fetchMeal();
   }, [id]);
-
-  // TheMealDB stores ingredients and measurements in numbered fields.
-  function getIngredients(meal) {
-    const ingredientList = [];
-
-    for (let i = 1; i <= 20; i++) {
-      const ingredient = meal[`strIngredient${i}`];
-      const measure = meal[`strMeasure${i}`];
-
-      if (ingredient && ingredient.trim() !== "") {
-        ingredientList.push({
-          id: `${meal.idMeal}-${i}`,
-          name: ingredient,
-          measure: measure || "",
-        });
-      }
-    }
-
-    return ingredientList;
-  }
 
  const isFavorite = favorites.some(
   (favorite) => favorite.idMeal === meal?.idMeal
