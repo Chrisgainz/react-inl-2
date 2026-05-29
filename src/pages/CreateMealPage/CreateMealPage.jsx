@@ -1,14 +1,14 @@
 
-import { useState } from "react";
+
 import MealForm from "../../components/MealForm/MealForm";
 import MealCardContainer from "../../components/MealCardContainer/MealCardContainer";
 import Button from "../../components/Button/Button";
 import styles from "./CreateMealPage.module.css";
 
 
-function CreateMealPage() {
+function CreateMealPage( { createdMeals, setCreatedMeals } ) {
 
-    const [createdMeals, setCreatedMeals] = useState([]);
+    
     const handleCreateMeal = (meal) => { setCreatedMeals((prev) => [...prev, meal]); };
     const clearMeals = () => { setCreatedMeals([]) };
 
@@ -32,7 +32,7 @@ function CreateMealPage() {
 
              <div className={styles.createdMealsWrapper}>
 
-            <MealCardContainer meals={ createdMeals } />
+            <MealCardContainer meals={ createdMeals } showButton={false} />
 
             </div>
 

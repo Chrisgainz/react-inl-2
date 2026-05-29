@@ -1,0 +1,79 @@
+
+.clearBtnContainer {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+
+}
+
+.title {
+
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.7rem;
+
+}
+
+.favoritesPage {
+
+    padding-right: 2rem;
+    padding-left: 2rem;
+
+
+}
+
+.mealContainer {
+    
+    width: 100%;
+    max-width: 1400px;
+   
+
+
+}
+
+@media (min-width: 768px) {
+
+    .favoritesPage {
+
+        padding-top: 1.5rem;
+    }
+
+.title {
+
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 0.5rem;
+}
+
+.clearBtnContainer {
+
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+}
+}
+
+
+@media (min-width: 1024px) {
+
+    .favoritesPage {
+
+     padding-top: 1.5rem;    
+        
+    }
+
+.title {
+
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    margin-top: 0.5rem;
+}
+
+.clearBtnContainer {
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}
+}

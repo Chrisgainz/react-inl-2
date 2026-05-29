@@ -10,6 +10,7 @@ function MealForm({ onCreateMeal }) {
 
     const [mealName, setMealName] = useState("");
     const [category, setCategory] = useState("");
+    const [area, setArea] = useState("");
     const [ingredientInput, setIngredientInput] = useState("");
     const [ingredients, setIngredients] = useState([]);
     const [imageUrl, setImageUrl] = useState("");
@@ -49,6 +50,7 @@ function MealForm({ onCreateMeal }) {
             idMeal: Date.now(),
             strMeal: mealName,
             strCategory: category,
+            strArea: area,
             strMealThumb: imageUrl || placeholderImage,
             ingredients: ingredients
 
@@ -58,6 +60,7 @@ function MealForm({ onCreateMeal }) {
         onCreateMeal(newMeal);
         setMealName("");
         setCategory("");
+        setArea("");
         setIngredientInput("");
         setIngredients([]);
         setImageUrl("");
@@ -75,6 +78,10 @@ function MealForm({ onCreateMeal }) {
 
             <Input value={category} onChange={(e) => setCategory(e.target.value)}
                 placeholder="Kategori" required />
+
+                <Input value={area} onChange={(e) => setArea(e.target.value)}
+                    placeholder="Rättens ursprung (Valfritt)"
+                />
 
             <div className={styles.ingredientContainer}>
 

@@ -10,15 +10,17 @@
 
 .createdMealsWrapper {
 
-    padding: 2rem 2rem;
+    padding: 1rem 2rem;
 
 }
 
 
 .title {
 
+    
     text-align: center;
-    margin: 2rem 0;
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
 
 }
 
@@ -38,7 +40,7 @@
 
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 
 }
 
@@ -49,6 +51,23 @@
 
         padding: 3rem 2rem;
     }
+
+.title {
+
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 0.1rem;
+}
+
+.clearBtnContainer {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
 }
 
 
@@ -56,6 +75,23 @@
 
     .createMealPage {
 
-        padding: 4rem 2rem;
+        padding: 3rem 2rem;
     }
+
+ .title {
+
+    font-size: 2.5rem;
+    margin-top: 0.1rem;
+    margin-bottom: 3rem;
+ }
+
+ .clearBtnContainer {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}
+
 }

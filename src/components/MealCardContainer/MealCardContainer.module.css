@@ -9,6 +9,7 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 2rem 0;
+    justify-items: center;
 }
 
 .notFoundMessage {
@@ -34,5 +35,6 @@
     .container {
 
         gap: 3rem;
+        
     }
 }
